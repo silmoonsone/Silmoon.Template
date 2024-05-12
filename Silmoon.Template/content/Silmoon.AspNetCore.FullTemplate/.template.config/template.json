@@ -10,11 +10,13 @@
     "type": "project"
   },
   "symbols": {
-    "projectName": {
+    "ClassName": {
       "type": "parameter",
-      "dataType": "string",
-      "defaultValue": "Silmoon.AspNetCore.FullTemplate",
-      "replaces": "Silmoon.AspNetCore.FullTemplate"
+      "description": "The name of the code file and class.",
+      "dataType": "text",
+      "replaces": "Silmoon.AspNetCore.FullTemplate",
+      "fileRename": "Silmoon.AspNetCore.FullTemplate",
+      "defaultValue": "Silmoon.AspNetCore.FullTemplate"
     }
   }
 }
