@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "SILMOON",
+  "classifications": [ "Web", "ASP.NET" ],
+  "identity": "Silmoon.AspNetCore.FullTemplate",
+  "name": "Silmoon.AspNetCore.FullTemplate",
+  "shortName": "smwebfull",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "projectName": {
+      "type": "parameter",
+      "dataType": "string",
+      "defaultValue": "Silmoon.AspNetCore.FullTemplate",
+      "replaces": "Silmoon.AspNetCore.FullTemplate"
+    }
+  }
+}

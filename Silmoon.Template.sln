@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silmoon.Template", "Silmoon.Template\Silmoon.Template.csproj", "{36618991-EB37-4B53-BA27-06BF11163EAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silmoon.AspNetCore.FullTemplate", "Silmoon.Template\content\Silmoon.AspNetCore.FullTemplate\Silmoon.AspNetCore.FullTemplate.csproj", "{2F7B1BB5-C379-47FD-9589-63AAD45E31DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36618991-EB37-4B53-BA27-06BF11163EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36618991-EB37-4B53-BA27-06BF11163EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36618991-EB37-4B53-BA27-06BF11163EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36618991-EB37-4B53-BA27-06BF11163EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7B1BB5-C379-47FD-9589-63AAD45E31DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7B1BB5-C379-47FD-9589-63AAD45E31DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7B1BB5-C379-47FD-9589-63AAD45E31DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7B1BB5-C379-47FD-9589-63AAD45E31DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D22B12D-816C-4D7B-8490-6151A9FEA03B}
+	EndGlobalSection
+EndGlobal
