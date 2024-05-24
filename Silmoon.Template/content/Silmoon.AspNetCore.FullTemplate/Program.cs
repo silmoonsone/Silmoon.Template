@@ -100,9 +100,7 @@ app.MapControllerRoute(
 // ** To enable razor pages support
 //app.MapRazorPages();
 
-
-//app.MapBlazorHub("/Backend/_blazor");
-//SignalR Hub
+// ** To enable SignalR Hub support
 //app.MapHub<DemoHub>("/hubs/DemoHub");
 
 // ** To enable Blazor server components
