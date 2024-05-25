@@ -47,6 +47,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 // ** SignalR support
 //builder.Services.AddSignalR();
+// ** SignalR service mode for ChatServiceHub, require AddSignalR()
+//builder.Services.AddSingleton<ChatService>();
 
 // ** required NuGet package for Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson
 //builder.Services.AddSignalR().AddNewtonsoftJsonProtocol();
@@ -105,6 +107,8 @@ app.MapControllerRoute(
 
 // ** To add a SignalR Hub
 //app.MapHub<ChatHub>("/hubs/ChatHub");
+// ** Use service mode for SignalR Hub
+//app.MapHub<ChatServiceHub>("/hubs/ChatServiceHub");
 
 // ** To enable Blazor server components
 //app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
