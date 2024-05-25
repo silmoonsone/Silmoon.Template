@@ -45,6 +45,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // ** required NuGet package for Swashbuckle.AspNetCore.Newtonsoft
 //builder.Services.AddSwaggerGen().AddSwaggerGenNewtonsoftSupport();
 
+// ** SignalR support
+//builder.Services.AddSignalR();
+
 // ** required NuGet package for Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson
 //builder.Services.AddSignalR().AddNewtonsoftJsonProtocol();
 
@@ -100,8 +103,8 @@ app.MapControllerRoute(
 // ** To enable razor pages support
 //app.MapRazorPages();
 
-// ** To enable SignalR Hub support
-//app.MapHub<DemoHub>("/hubs/DemoHub");
+// ** To add a SignalR Hub
+//app.MapHub<ChatHub>("/hubs/ChatHub");
 
 // ** To enable Blazor server components
 //app.MapRazorComponents<App>().AddInteractiveServerRenderMode();

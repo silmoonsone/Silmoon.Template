@@ -2,7 +2,7 @@
 
 namespace Silmoon.AspNetCore.FullTemplate.Controllers
 {
-    public class PortalController : Controller
+    public class DemoController : Controller
     {
         public IActionResult Index()
         {
