@@ -12,10 +12,10 @@ namespace Silmoon.AspNetCore.FullTemplate.Services
         private readonly IHubContext<ChatServiceHub> chatServiceHub;
 
         // 用于存储用户连接ID与用户名的映射
-        private static readonly ConcurrentDictionary<string, string> _connections = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, string> _connections = [];
 
         // 用于存储用户名与连接ID的映射
-        private static readonly ConcurrentDictionary<string, string> _users = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, string> _users = [];
 
         public ChatService(IHubContext<ChatServiceHub> hubContext)
         {
