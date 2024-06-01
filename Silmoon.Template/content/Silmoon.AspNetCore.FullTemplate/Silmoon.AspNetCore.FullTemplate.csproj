@@ -30,7 +30,7 @@
     <PackageReference Include="Silmoon.AspNetCore.Extension" Version="1.2.3" />
     <PackageReference Include="Silmoon.Data.MongoDB" Version="1.2.3.1" />
     <PackageReference Include="Silmoon.Drawing" Version="1.2.3" />
-    <PackageReference Include="Silmoon.Extension" Version="1.2.3.2" />
+    <PackageReference Include="Silmoon.Extension" Version="1.2.3.3" />
     <PackageReference Include="Silmoon.Net" Version="1.2.3" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
   </ItemGroup>
