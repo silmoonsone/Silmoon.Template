@@ -16,12 +16,12 @@ namespace Silmoon.AspNetCore.FullTemplate;
 public class Core : MongoService, IDisposable
 {
     public override MongoExecuter Executer { get; set; }
-    public ISilmoonConfigureService SilmoonConfigureService { get; set; }
+    public SilmoonConfigureServiceImpl SilmoonConfigureService { get; set; }
 
     public Core(ISilmoonConfigureService silmoonConfigureService)
     {
-        SilmoonConfigureService = silmoonConfigureService;
-        Executer = new MongoExecuter(((SilmoonConfigureServiceImpl)SilmoonConfigureService).MongoDBConnectionString);
+        SilmoonConfigureService = (SilmoonConfigureServiceImpl)silmoonConfigureService;
+        Executer = new MongoExecuter(SilmoonConfigureService.MongoDBConnectionString);
     }
     public User GetUser(string Username)
     {
