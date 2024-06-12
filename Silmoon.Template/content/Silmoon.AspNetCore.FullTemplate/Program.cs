@@ -43,7 +43,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 
 // ** required NuGet package for Swashbuckle.AspNetCore
-//builder.Services.AddSwaggerGen(c => c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Configure.ProjectName}.xml"), true)).AddSwaggerGenNewtonsoftSupport();
+//builder.Services.AddSwaggerGen(c => c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{ProjectName}.xml"), true)).AddSwaggerGenNewtonsoftSupport();
 
 // ** required NuGet package for Swashbuckle.AspNetCore.Newtonsoft
 //builder.Services.AddSwaggerGen().AddSwaggerGenNewtonsoftSupport();
