@@ -6,7 +6,7 @@ namespace Silmoon.AspNetCore.FullTemplate.Services
 {
     public class SilmoonConfigureServiceImpl : SilmoonConfigureService
     {
-        public string MongoDBConnectionString { get; set; }
+        public string MongoDBConnectionString { get; private set; }
         public SilmoonConfigureServiceImpl(IOptions<SilmoonConfigureServiceOption> options) : base(options)
         {
             MongoDBConnectionString = ConfigJson["mongodb"].Value<string>();
