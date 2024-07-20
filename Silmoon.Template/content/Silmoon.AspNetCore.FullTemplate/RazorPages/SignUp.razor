@@ -7,19 +7,19 @@
 <div>
     <div class="form-group">
         <label for="Username">Username</label>
-        <InputText class="form-control" @bind-Value="Username"></InputText>
+        <InputText id="Username" class="form-control" @bind-Value="Username"></InputText>
     </div>
     <div class="form-group">
         <label for="Password">Password</label>
-        <InputText class="form-control" type="password" @bind-Value="Password"></InputText>
+        <InputText id="Password" class="form-control" type="password" @bind-Value="Password"></InputText>
     </div>
     <div class="form-group">
         <label for="RepeatPassword">RepeatPassword</label>
-        <InputText class="form-control" type="password" @bind-Value="RepeatPassword"></InputText>
+        <InputText id="RepeatPassword" class="form-control" type="password" @bind-Value="RepeatPassword"></InputText>
     </div>
     <div class="form-group">
         <button class="btn btn-primary" @onclick="SubmitSignUp">Sign Up</button>
-        <a class="btn btn-secoundary" href="/signin">Sign In</a>
+        <a class="btn btn-secondary" href="/signin">Sign In</a>
     </div>
     <div class="form-group">
         @Message
