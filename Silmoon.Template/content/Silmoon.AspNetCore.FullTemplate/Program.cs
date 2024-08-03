@@ -101,6 +101,9 @@ app.UseStaticFiles();
 //}
 
 //app.UseApiDecrypt();
+app.UseCors(builder => builder.WithHosts("*.silmoon.com", "*.silmoon.id", "localhost"));
+
+
 app.UseSession();
 app.UseRouting();
 
