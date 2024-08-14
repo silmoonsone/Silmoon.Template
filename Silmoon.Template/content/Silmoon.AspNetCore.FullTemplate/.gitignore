@@ -9,7 +9,8 @@ DataProtection/
 *.localcode.*
 config-local.*.json
 config-local.json
-.local.cs
+*.local.cs
+*.local.db
 
 # User-specific files
 *.rsuser
