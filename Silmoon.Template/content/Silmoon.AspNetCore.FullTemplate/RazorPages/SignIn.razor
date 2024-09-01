@@ -1,6 +1,7 @@
 ﻿@page "/signin"
 @rendermode InteractiveServer
 @inject IJSRuntime Js
+@inject JsSilmoonAuthInterop Jsa
 @inject NavigationManager NavigationManager
 
 <h3>SignIn</h3>
@@ -35,16 +36,15 @@
 
     async void doSignIn()
     {
-        var result = await Js.InvokeAsync<object>("doCreateSession", [Username, Password]);
-        JObject jObject = JObject.Parse(result?.ToString());
-        if (jObject["Success"].Value<bool>())
+        var result = await Jsa.SignIn(Username, Password);
+        if (result.Success)
         {
             NavigationManager.NavigateTo("dashboard", true);
         }
         else
         {
-            Message = jObject["Message"].Value<string>();
+            Message = result.Message;
+            StateHasChanged();
         }
-        StateHasChanged();
     }
 }

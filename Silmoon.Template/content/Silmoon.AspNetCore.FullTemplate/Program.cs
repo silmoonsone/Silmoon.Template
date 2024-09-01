@@ -6,6 +6,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using Newtonsoft.Json.Linq;
 using Silmoon.AspNetCore.Binders;
+using Silmoon.AspNetCore.Blazor.Extensions;
 using Silmoon.AspNetCore.Extension.Binders;
 using Silmoon.AspNetCore.Extensions;
 using Silmoon.AspNetCore.FullTemplate;
@@ -60,6 +61,23 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // ** To add Blazor service
 //builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
+builder.Services.AddSingleton<Core>();
+builder.Services.AddSilmoonAuth<SilmoonAuthServiceImpl>();
+
+// ** required NuGet package for Silmoon.AspNetCore.Blazor
+//builder.Services.AddJsComponentInterop();
+//builder.Services.AddJsSilmoonAuthInterop();
+
+// ** required NuGet package for Silmoon.AspNetCore.Encryption
+//builder.Services.AddWebAuthnJsInterop();
+
+//builder.Services.AddSilmoonDevApp<SilmoonDevAppServiceImpl>();
+
+// ## custom a IHostedService for MainHostService
+//builder.Services.AddSingleton<MainHostService>();
+//builder.Services.AddHostedService(provider => provider.GetRequiredService<MainHostService>());
+
+
 builder.Services.AddSilmoonConfigure<SilmoonConfigureServiceImpl>(o =>
 {
 #if DEBUG
@@ -68,14 +86,6 @@ builder.Services.AddSilmoonConfigure<SilmoonConfigureServiceImpl>(o =>
     o.ReleaseConfig();
 #endif
 });
-builder.Services.AddSingleton<Core>();
-builder.Services.AddSilmoonAuth<SilmoonAuthServiceImpl>();
-
-//builder.Services.AddSilmoonDevApp<SilmoonDevAppServiceImpl>();
-
-// ## custom a IHostedService for MainHostService
-//builder.Services.AddSingleton<MainHostService>();
-//builder.Services.AddHostedService(provider => provider.GetRequiredService<MainHostService>());
 
 builder.Services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
@@ -106,6 +116,7 @@ app.UseCors(builder => builder.WithHosts("localhost"));
 
 app.UseSession();
 app.UseRouting();
+app.UseSilmoonAuth();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -2,6 +2,8 @@
 @inject IJSRuntime Js
 @inject NavigationManager NavigationManager
 @inject ISilmoonAuthService SilmoonAuthService
+@inject JsSilmoonAuthInterop Jsa
+@inject JsComponentInterop Jsc
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -57,7 +59,7 @@
             <hr style="background-color: white;" />
 
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="javascript: void(0);" @onclick="__doClearSession">
+                <NavLink class="nav-link" href="javascript: void(0);" @onclick="doSignOut">
                     SignOut
                 </NavLink>
             </div>
@@ -72,21 +74,17 @@
 @code {
     bool IsSignedIn { get; set; } = false;
     User User { get; set; }
-    async void __doClearSession()
+    async void doSignOut()
     {
-        var result = await Js.InvokeAsync<object>("doClearSession");
-        if (result is not null)
+        await Jsc.MetroUIConfirm("确认", "确认退出登录？", true, async yes =>
         {
-            JObject jObject = JObject.Parse(result?.ToString());
-            NavigationManager.Refresh(true);
-            StateHasChanged();
-        }
-        else
-        {
-            await Js.InvokeVoidAsync("alert", "error: JsInvoke doClearSession result is null");
-        }
+            if (yes)
+            {
+                var result = await Jsa.SignOut();
+                NavigationManager.Refresh(true);
+            }
+        });
     }
-
     protected override async Task OnInitializedAsync()
     {
         IsSignedIn = await SilmoonAuthService.IsSignIn();
