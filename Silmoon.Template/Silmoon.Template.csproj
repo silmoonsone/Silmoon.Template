@@ -17,7 +17,7 @@
 
   <PropertyGroup>
     <PackageId>Silmoon.Template</PackageId>
-    <Version>1.3.0</Version>
+    <Version>1.3.1</Version>
     <Authors>SILMOON</Authors>
     <Company>SILMOON LLC</Company>
     <Description>Silmoon templates</Description>

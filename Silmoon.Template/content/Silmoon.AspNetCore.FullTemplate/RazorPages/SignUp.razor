@@ -45,6 +45,9 @@
             };
         var result = Core.NewUser(user);
 
-        Message = result.Message;
+        if (result.State)
+            Message = "注册成功，请返回登录。";
+        else
+            Message = result.Message;
     }
 }
