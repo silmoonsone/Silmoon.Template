@@ -40,6 +40,7 @@ public class Helper
         {
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
             settings.Converters.Add(new ObjectIdJsonConverter());
+            settings.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto;
             return settings;
         });
     }
