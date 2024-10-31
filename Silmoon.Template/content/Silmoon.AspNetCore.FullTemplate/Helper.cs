@@ -28,6 +28,10 @@ public class Helper
         BsonSerializer.RegisterSerializer(typeof(BigInteger), new BigIntegerConvertSerializer());
         BsonSerializer.RegisterSerializer(typeof(JObject), new JObjectBsonDocumentConvertSerializer());
         BsonSerializer.RegisterSerializer(typeof(JArray), new JArrayBsonDocumentConvertSerializer());
+
+        // ** Set default MongoDB DateTime to local time
+        //BsonSerializer.RegisterSerializer(typeof(DateTime), new DateTimeSerializer(DateTimeKind.Local));
+
         var objectSerializer = new ObjectSerializer(type => ObjectSerializer.DefaultAllowedTypes(type) || type.FullName.StartsWith(string.Empty));
         BsonSerializer.RegisterSerializer(objectSerializer);
 
