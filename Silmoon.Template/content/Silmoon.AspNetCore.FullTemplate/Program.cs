@@ -102,7 +102,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseAntiforgery();
+app.MapStaticAssets();
 
 //if (app.Environment.IsDevelopment())
 //{
@@ -141,7 +142,6 @@ app.MapControllerRoute(
 // ** To enable Blazor server components
 //app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
-app.UseAntiforgery();
 
 Helper.Output(logger, "Server app run.", LogLevel.Information);
 app.Run();
