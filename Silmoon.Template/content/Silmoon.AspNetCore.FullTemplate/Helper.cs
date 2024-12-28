@@ -8,6 +8,7 @@ using System.Numerics;
 using System.Reflection;
 using Silmoon.Data.MongoDB.Serializer;
 using Silmoon.Data.MongoDB.Converters;
+using Silmoon.Data.MongoDB.Extensions;
 
 namespace Silmoon.AspNetCore.FullTemplate;
 
@@ -43,7 +44,8 @@ public class Helper
         Newtonsoft.Json.JsonConvert.DefaultSettings = new Func<Newtonsoft.Json.JsonSerializerSettings>(() =>
         {
             var settings = new Newtonsoft.Json.JsonSerializerSettings();
-            settings.Converters.Add(new ObjectIdJsonConverter());
+            settings.AddAllCommonConverters();
+            settings.AddAllBsonConverters();
             settings.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto;
             return settings;
         });
