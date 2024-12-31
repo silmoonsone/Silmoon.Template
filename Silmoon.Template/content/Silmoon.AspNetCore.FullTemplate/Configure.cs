@@ -12,7 +12,7 @@ using Silmoon.Data.MongoDB.Extensions;
 
 namespace Silmoon.AspNetCore.FullTemplate;
 
-public class Helper
+public class Configure
 {
     public static void RegisterStartClassSupport()
     {

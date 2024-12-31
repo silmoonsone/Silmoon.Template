@@ -21,7 +21,7 @@ using System.Reflection;
 
 string ProjectName = Assembly.GetExecutingAssembly().GetName().Name;
 
-Helper.RegisterStartClassSupport();
+Configure.RegisterStartClassSupport();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -143,6 +143,6 @@ app.MapControllerRoute(
 //app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
 
-Helper.Output(logger, "Server app run.", LogLevel.Information);
+Configure.Output(logger, "Server app run.", LogLevel.Information);
 app.Run();
-Helper.Output(logger, "Server shutdown.", LogLevel.Information);
+Configure.Output(logger, "Server shutdown.", LogLevel.Information);
